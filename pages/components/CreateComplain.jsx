@@ -49,7 +49,7 @@ const CreateComplain = () => {
     console.log(dataa);
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/make-a-gd",
+        "https://police-case-iubat.vercel.app/make-a-gd",
         dataa
       );
       console.log(data);
@@ -67,7 +67,7 @@ const CreateComplain = () => {
   const deleteGd = async (id) => {
     try {
       const { data } = await axios.delete(
-        `http://localhost:5000/delete-a-gd?id=${id}`
+        `https://police-case-iubat.vercel.app/delete-a-gd?id=${id}`
       );
       if (data.success) {
         toast.success("GD deleted successfully");
@@ -85,7 +85,7 @@ const CreateComplain = () => {
 
   const fetchGds = async () => {
     const { data } = await axios.get(
-      `http://localhost:5000/all-gds?page=${page}`
+      `https://police-case-iubat.vercel.app/all-gds?page=${page}`
     );
     setGds(data.gds);
     setGdsCount(data.count);
